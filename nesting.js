@@ -50,7 +50,15 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+const employeeUpdater = () => {
+  employees.forEach((v, i, a) =>  {
+    if (v.firstName === 'Theo')
+      a.splice(i, 1);
+    if (v.firstName === 'Lorie')
+      a[i].department = 'HR'
+  });
+  return employees;
+}
 
 
 
@@ -68,7 +76,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+const removeDuplicates = () =>  {
+  var exists = [];
+  return workplaceAccidents.filter((v, i, a) => {
+    if (exists.includes(v)) 
+      return false;
+    else {
+      exists.push(v);
+      return true;
+    }
+  });
+}
 
 
 
@@ -97,8 +115,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name; 
 
 
 
@@ -138,7 +156,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+const recordCleaner = () => {
+  myCar.accidents.forEach((v, i) => {
+    if (v.atFaultForAccident === true)
+      myCar.accidents[i] = false;
+  });
+}
 
 
 
@@ -157,6 +180,13 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+const looper = () => {
+  numsArr.forEach((v, i) => {
+    v.forEach((v2, i2) =>  {
+      numsArr[i][i2] = v2 % 2 == 0 ? 'even' : 'odd';
+    });
+  });
+  return numsArr;
+}
 
 
